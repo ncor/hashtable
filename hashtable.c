@@ -25,10 +25,6 @@ bool hashtableHas(hashtable ht, char* key) {
 	return false;
 }
 
-/*
- * Used to included in hashtableSet and
- * hashtableDelete method.
- */
 void hashtableExpand(hashtable* ht, int additionalSize) {
 	int prevSize = ht->size;
 	item* items = ht->items;
