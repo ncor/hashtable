@@ -16,11 +16,9 @@ hashtable createHashtable() {
 bool hashtableHas(hashtable ht, char* key) {
 	item* items = ht.items;
 
-	for (int i = 0; i < ht.size; i++) {
-		if (strcmp(items[i].key, key) == 0) {
+	for (int i = 0; i < ht.size; i++)
+		if (strcmp(items[i].key, key) == 0)
 			return true;
-		}
-	}
 
 	return false;
 }
@@ -32,9 +30,8 @@ void hashtableExpand(hashtable* ht, int additionalSize) {
 	ht->size = prevSize + additionalSize;
 	ht->items = (item*)realloc(ht->items, ht->size * sizeof(item));
 	
-	for (int i = 0; i < prevSize; i++) {
+	for (int i = 0; i < prevSize; i++)
 		ht->items[i] = items[i];
-	}
 }
 
 /*
@@ -101,9 +98,8 @@ void hashtableDelete(hashtable* ht, char* key) {
 
 int* hashtableGet(hashtable ht, char* key) {
 	for (int i = 0; i < ht.size; i++) {
-		if (strcmp(ht.items[i].key, key) == 0) {
+		if (strcmp(ht.items[i].key, key) == 0)
 			return &ht.items[i].value;
-		}
 	}
 
 	return NULL;
