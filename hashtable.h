@@ -1,12 +1,12 @@
 #include <stdbool.h>
 
 
-typedef struct {
+typedef struct item {
 	char* key;
 	int value;
 } item;
 
-typedef struct {
+typedef struct hashtable {
 	item* items;
 	int size;
 } hashtable;
@@ -23,4 +23,3 @@ void hashtableSet(hashtable* ht, char* key, int value);
 void hashtableDelete(hashtable* ht, char* key);
 
 int* hashtableGet(hashtable ht, char* key);
-
